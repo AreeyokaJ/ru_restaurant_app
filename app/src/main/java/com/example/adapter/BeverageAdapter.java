@@ -50,6 +50,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.Bevera
         Spinner sizeSpinner;
         Spinner quantitySpinner;
         Button addToOrderButton;
+        LinearLayout clickableRow;
 
         /**
          * Initializes the view holder with beverage image and name.
@@ -64,6 +65,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.Bevera
             sizeSpinner = itemView.findViewById(R.id.sizeSpinner);
             quantitySpinner = itemView.findViewById(R.id.quantitySpinner);
             addToOrderButton = itemView.findViewById(R.id.addToOrderButton);
+            clickableRow = itemView.findViewById(R.id.clickableRow);
         }
     }
 
@@ -93,7 +95,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.Bevera
         holder.imageView.setImageResource(item.getImageResId());
 
         // Allows user to click on Beverage and add to order
-        holder.imageView.setOnClickListener(v -> {
+        holder.clickableRow.setOnClickListener(v -> {
             if (holder.optionsLayout.getVisibility() == View.GONE) {
                 holder.optionsLayout.setVisibility(View.VISIBLE);
             } else {
