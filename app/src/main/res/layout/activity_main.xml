@@ -21,24 +21,86 @@
 
     <include layout="@layout/main_menu" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/beveragesImage"
-        android:layout_width="181dp"
-        android:layout_height="153dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:clickable="true"
-        android:contentDescription="@string/view_beverages"
-        android:focusable="true"
-        android:src="@drawable/beverages" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="848dp"
+                android:contentDescription="@string/burgers_cd">
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="191dp"
+                    android:layout_height="137dp"
+                    android:layout_marginTop="72dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/burgers" />
+
+                <ImageView
+                    android:id="@+id/beveragesImage"
+                    android:layout_width="181dp"
+                    android:layout_height="153dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="48dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/view_beverages"
+                    android:focusable="true"
+                    android:src="@drawable/beverages"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="165dp"
+                    android:layout_height="182dp"
+                    android:layout_marginTop="56dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/beveragesImage"
+                    app:srcCompat="@drawable/sandwiches" />
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="139dp"
+                    android:layout_height="129dp"
+                    android:layout_marginTop="76dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.469"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/fries" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="48dp"
+                    android:text="@string/burgers_cd"
+                    android:textColor="#FAFAFA"
+                    android:textSize="34sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+                    app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

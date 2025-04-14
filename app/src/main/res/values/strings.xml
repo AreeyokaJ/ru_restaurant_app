@@ -9,6 +9,7 @@
     <string name="view_beverages">Order Beverages</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="burgers_cd">Burger</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
