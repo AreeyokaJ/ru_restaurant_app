@@ -31,9 +31,8 @@
             android:id="@+id/burgerButton"
             android:layout_width="191dp"
             android:layout_height="137dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="148dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/burgers" />
@@ -43,13 +42,13 @@
             android:layout_width="181dp"
             android:layout_height="153dp"
             android:layout_gravity="center"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="56dp"
             android:clickable="true"
             android:contentDescription="@string/view_beverages"
             android:focusable="true"
             android:src="@drawable/beverages"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/burgerButton" />
 
@@ -57,12 +56,12 @@
             android:id="@+id/sandwichButton"
             android:layout_width="165dp"
             android:layout_height="182dp"
-            android:layout_marginTop="32dp"
-            android:scaleType="centerCrop"
+            android:layout_marginTop="40dp"
             android:adjustViewBounds="true"
             android:background="@null"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/beveragesImage"
             app:srcCompat="@drawable/sandwiches" />
@@ -71,8 +70,9 @@
             android:id="@+id/sidesButton"
             android:layout_width="141dp"
             android:layout_height="145dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sandwichButton"
             app:srcCompat="@drawable/fries" />
@@ -137,6 +137,15 @@
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="@+id/sidesButton"
             app:layout_constraintTop_toTopOf="@+id/sidesButton" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="166dp"
+            android:layout_height="113dp"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toStartOf="@+id/burgerButton"
+            app:srcCompat="@drawable/shopping_cart"
+            tools:layout_editor_absoluteY="72dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
