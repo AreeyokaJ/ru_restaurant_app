@@ -67,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/beveragesImage"
             app:srcCompat="@drawable/sandwiches" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/sidesButton"
             android:layout_width="141dp"
             android:layout_height="145dp"

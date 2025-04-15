@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Add Sides Click Logic
-        ImageView sidesImage = findViewById(R.id.sidesButton);
+        ImageButton sidesImage = findViewById(R.id.sidesButton);
         sidesImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

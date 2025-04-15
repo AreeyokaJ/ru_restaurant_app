@@ -35,17 +35,14 @@ import java.util.List;
  */
 public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder> {
     private final List<SideOrBeverageItem> sideList;
-    private final Context context;
 
     /**
      * Constructs a new SideAdapter with a list of Side enums and application context.
      *
      * @param sideList List of Side enum values
-     * @param context  Android context used for layout inflation and resource access
      */
-    public SideAdapter(List<SideOrBeverageItem> sideList, Context context) {
+    public SideAdapter(List<SideOrBeverageItem> sideList) {
         this.sideList = sideList;
-        this.context = context;
     }
 
     /**
@@ -84,7 +81,7 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
      */
     @Override
     public SideViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.menu_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item, parent, false);
         return new SideViewHolder(view);
     }
 
@@ -96,13 +93,9 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
      */
     @Override
     public void onBindViewHolder(SideViewHolder holder, int position) {
-        Side side = sideList.get(position).getSide();
-        holder.sideName.setText(side.toString());
-
-        // Set image resource based on enum name
-        String imageName = side.name().toLowerCase();
-        int imageRes = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
-        holder.sideImage.setImageResource(imageRes);
+        SideOrBeverageItem item = sideList.get(position); // new unified item class
+        holder.sideName.setText(item.getDisplayName());
+        holder.sideImage.setImageResource(item.getImageResId());
 
         // Toggle hidden menu on click
         holder.clickableRow.setOnClickListener(v -> {
@@ -110,6 +103,9 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
                     holder.optionsLayout.getVisibility() == View.GONE ? View.VISIBLE : View.GONE
             );
         });
+
+        // Use parent.getContext() from the ViewHolder
+        Context context = holder.itemView.getContext();
 
         // Populate size spinner
         ArrayAdapter<Size> sizeAdapter = new ArrayAdapter<>(
@@ -128,16 +124,22 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
         );
         qtyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         holder.quantitySpinner.setAdapter(qtyAdapter);
-        
+
         // Handle "Add to Order" click
         holder.addToOrder.setOnClickListener(v -> {
-            Size size = (Size) holder.sizeSpinner.getSelectedItem();
-            int qty = (int) holder.quantitySpinner.getSelectedItem();
-            
-            SideItem item = new SideItem(side, size, qty);
-            OrderManager.getInstance().getCurrentOrder().addItem(item);
+            Size selectedSize = (Size) holder.sizeSpinner.getSelectedItem();
+            int quantity = (int) holder.quantitySpinner.getSelectedItem();
 
-            Toast.makeText(context, "Added " + qty + " " + size + " " + side + " to order", Toast.LENGTH_SHORT).show();
+            if (!item.isFlavor() && item.getSide() != null) {
+                SideItem sideItem = new SideItem(item.getSide(), selectedSize, quantity);
+                OrderManager.getInstance().getCurrentOrder().addItem(sideItem);
+
+                Toast.makeText(context,
+                        "Added " + quantity + " " + selectedSize + " " + item.getSide().toString() + " to order",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Invalid side item!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -56,4 +56,5 @@
     <string name="burgers_cd">Burgers</string>
     <string name="beverages_cd">Beverages</string>
     <string name="sides">Sides\n</string>
+    <string name="select_your_beverage">Select Your Beverage</string>
 </resources>

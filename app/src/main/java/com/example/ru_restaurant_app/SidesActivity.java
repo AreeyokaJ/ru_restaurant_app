@@ -11,7 +11,6 @@ import com.example.model.SideOrBeverageItem;
 import com.example.model.Side;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -36,7 +35,7 @@ public class SidesActivity extends AppCompatActivity {
         for (Side side : Side.values()) {
             sides.add(new SideOrBeverageItem(this, side));
         }
-        adapter = new SideAdapter(sides, this);
+        adapter = new SideAdapter(sides);
         sidesRecyclerView.setAdapter(adapter);
     }
 }

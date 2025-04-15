@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BeveragesActivity"></activity>
+        <activity android:name=".SidesActivity"></activity>
     </application>
 
 </manifest>
