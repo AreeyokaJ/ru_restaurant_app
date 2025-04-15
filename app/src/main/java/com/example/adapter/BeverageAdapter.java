@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.manager.OrderManager;
 import com.example.model.Beverage;
-import com.example.model.BeverageItem;
+import com.example.model.SideOrBeverageItem;
 import com.example.model.Size;
 import com.example.ru_restaurant_app.R;
 
@@ -29,14 +29,14 @@ import java.util.List;
  */
 public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.BeverageViewHolder> {
 
-    private final List<BeverageItem> beverageList;
+    private final List<SideOrBeverageItem> beverageList;
 
     /**
      * Constructs a BeverageAdapter using a list of BeverageItem objects.
      *
      * @param beverageList The list of items to display
      */
-    public BeverageAdapter(List<BeverageItem> beverageList) {
+    public BeverageAdapter(List<SideOrBeverageItem> beverageList) {
         this.beverageList = beverageList;
     }
 
@@ -78,7 +78,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.Bevera
      */
     @Override
     public BeverageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.beverage_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item, parent, false);
         return new BeverageViewHolder(view);
     }
 
@@ -90,7 +90,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.Bevera
      */
     @Override
     public void onBindViewHolder(BeverageViewHolder holder, int position) {
-        BeverageItem item = beverageList.get(position);
+        SideOrBeverageItem item = beverageList.get(position);
         holder.textView.setText(item.getDisplayName());
         holder.imageView.setImageResource(item.getImageResId());
 

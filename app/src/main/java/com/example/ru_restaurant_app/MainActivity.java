@@ -18,6 +18,7 @@ import com.example.ru_restaurant_app.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BeveragesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Add Sides Click Logic
+        ImageView sidesImage = findViewById(R.id.sidesButton);
+        sidesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Sides clicked");
+                Intent intent = new Intent(MainActivity.this, SidesActivity.class);
                 startActivity(intent);
             }
         });

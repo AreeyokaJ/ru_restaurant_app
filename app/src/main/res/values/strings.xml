@@ -53,4 +53,7 @@
     <string name="cart">Cart</string>
     <string name="orders">Orders</string>
     <string name="sandwiches_cd">Sandwiches</string>
+    <string name="burgers_cd">Burgers</string>
+    <string name="beverages_cd">Beverages</string>
+    <string name="sides">Sides\n</string>
 </resources>

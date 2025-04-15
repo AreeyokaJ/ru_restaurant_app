@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.manager.OrderManager;
 import com.example.model.Side;
 import com.example.model.SideItem;
+import com.example.model.SideOrBeverageItem;
 import com.example.model.Size;
 import com.example.ru_restaurant_app.R;
 
@@ -33,7 +34,7 @@ import java.util.List;
  * @author Elvin Xu
  */
 public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder> {
-    private final List<Side> sideList;
+    private final List<SideOrBeverageItem> sideList;
     private final Context context;
 
     /**
@@ -42,7 +43,7 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
      * @param sideList List of Side enum values
      * @param context  Android context used for layout inflation and resource access
      */
-    public SideAdapter(List<Side> sideList, Context context) {
+    public SideAdapter(List<SideOrBeverageItem> sideList, Context context) {
         this.sideList = sideList;
         this.context = context;
     }
@@ -83,7 +84,7 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
      */
     @Override
     public SideViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.beverage_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.menu_item, parent, false);
         return new SideViewHolder(view);
     }
 
@@ -95,7 +96,7 @@ public class SideAdapter extends RecyclerView.Adapter<SideAdapter.SideViewHolder
      */
     @Override
     public void onBindViewHolder(SideViewHolder holder, int position) {
-        Side side = sideList.get(position);
+        Side side = sideList.get(position).getSide();
         holder.sideName.setText(side.toString());
 
         // Set image resource based on enum name

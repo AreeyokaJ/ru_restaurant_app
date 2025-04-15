@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adapter.BeverageAdapter;
-import com.example.model.Beverage;
-import com.example.model.BeverageItem;
+import com.example.model.SideOrBeverageItem;
 import com.example.model.Flavor;
 
 import java.util.ArrayList;
@@ -26,14 +25,14 @@ public class BeveragesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.beverages);
+        setContentView(R.layout.menu_list);
 
         beverageRecyclerView = findViewById(R.id.beverageRecyclerView);
         beverageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<BeverageItem> beverages = new ArrayList<>();
+        List<SideOrBeverageItem> beverages = new ArrayList<>();
         for (Flavor flavor : Flavor.values()) {
-            beverages.add(new BeverageItem(this, flavor));
+            beverages.add(new SideOrBeverageItem(this, flavor));
         }
 
         adapter = new BeverageAdapter(beverages);
