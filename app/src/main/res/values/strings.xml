@@ -56,5 +56,12 @@
     <string name="burgers_cd">Burgers</string>
     <string name="beverages_cd">Beverages</string>
     <string name="sides">Sides\n</string>
-    <string name="select_your_beverage">Select Your Beverage</string>
+    <string name="select_your_generic">Select Your %1$s</string>
+    <string name="sandwich_title">Customize Your Sandwich</string>
+    <string name="protein_text">Choose a Protein:</string>
+    <string name="bread_text">Choose Bread:</string>
+    <string name="toppings_text">Toppings (Optional):</string>
+    <string name="quantity_text">Quantity:</string>
+    <string name="price_placeholder">Price: $0.00</string>
+    <string name="add_combo">Add Combo</string>
 </resources>

@@ -28,6 +28,6 @@
         </activity>
         <activity android:name=".BeveragesActivity"></activity>
         <activity android:name=".SidesActivity"></activity>
+        <activity android:name=".SandwichActivity"></activity>
     </application>
-
 </manifest>

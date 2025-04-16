@@ -36,24 +36,32 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
 
         // Add Beverage Click logic
-        ImageView beveragesImage = binding.beveragesImage;
-        beveragesImage.setOnClickListener(new View.OnClickListener() {
+        ImageButton beverageButton = binding.beveragesButton;
+        beverageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BeveragesActivity.class);
+                intent.putExtra("menuTitle", "Beverage");
                 startActivity(intent);
             }
         });
 
         // Add Sides Click Logic
-        ImageButton sidesImage = findViewById(R.id.sidesButton);
-        sidesImage.setOnClickListener(new View.OnClickListener() {
+        ImageButton sidesButton = findViewById(R.id.sidesButton);
+        sidesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Sides clicked");
                 Intent intent = new Intent(MainActivity.this, SidesActivity.class);
+                intent.putExtra("menuTitle", "Side");
                 startActivity(intent);
             }
+        });
+
+        // Add Sandwich Click Logic
+        ImageButton sandwichButton = findViewById(R.id.sandwichButton);
+        sandwichButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SandwichActivity.class);
+            startActivity(intent);
         });
     }
 

@@ -37,8 +37,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/burgers" />
 
-        <ImageView
-            android:id="@+id/beveragesImage"
+        <ImageButton
+            android:id="@+id/beveragesButton"
             android:layout_width="181dp"
             android:layout_height="153dp"
             android:layout_gravity="center"
