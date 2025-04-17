@@ -1,5 +1,6 @@
 package com.example.ru_restaurant_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -90,16 +91,30 @@ public class SandwichActivity extends AppCompatActivity {
             selectedAddOns.clear();
             for (CheckBox cb : addOnCheckboxes) {
                 if (cb.isChecked()) selectedAddOns.add((AddOns) cb.getTag());
-
-                Sandwich sandwich = new Sandwich(selectedBread, selectedProtein, selectedAddOns, quantity);
-                OrderManager.getInstance().getCurrentOrder().addItem(sandwich);
-
-                Toast.makeText(this, "Added to order!", Toast.LENGTH_SHORT).show();
             }
+
+            Sandwich sandwich = new Sandwich(selectedBread, selectedProtein, selectedAddOns, quantity);
+            OrderManager.getInstance().getCurrentOrder().addItem(sandwich);
+
+            Toast.makeText(this, "Added " + quantity + " sandwiches to order!", Toast.LENGTH_SHORT).show();
+            finish();
         });
 
-        // Handle Add Combo (Add later)
+        // Handle Add Combo
+        findViewById(R.id.addComboButton).setOnClickListener(v -> {
+            selectedProtein = (Protein) proteinSpinner.getSelectedItem();
+            selectedBread = (Bread) breadSpinner.getSelectedItem();
+            quantity = (int) quantitySpinner.getSelectedItem();
 
+            selectedAddOns.clear();
+            for (CheckBox cb : addOnCheckboxes) {
+                if (cb.isChecked()) selectedAddOns.add((AddOns) cb.getTag());
+            }
+            Sandwich sandwich = new Sandwich(selectedBread, selectedProtein, selectedAddOns, quantity);
+            Intent comboIntent = new Intent(SandwichActivity.this, ComboActivity.class);
+            comboIntent.putExtra("sandwich", sandwich);
+            startActivity(comboIntent);
+        });
     }
 
     /**

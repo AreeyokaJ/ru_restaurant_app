@@ -64,4 +64,7 @@
     <string name="quantity_text">Quantity:</string>
     <string name="price_placeholder">Price: $0.00</string>
     <string name="add_combo">Add Combo</string>
+    <string name="combo_text">Customize Your Combo</string>
+    <string name="drink_selection">Choose a Drink:</string>
+    <string name="add_combo_to_order">Add Combo to Order</string>
 </resources>
