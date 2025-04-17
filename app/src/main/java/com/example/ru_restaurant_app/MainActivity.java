@@ -63,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SandwichActivity.class);
             startActivity(intent);
         });
+
+        // Add Burger Click Logic
+        ImageButton burgerButton = findViewById(R.id.burgerButton);
+        burgerButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BurgerActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
