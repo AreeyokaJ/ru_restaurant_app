@@ -18,12 +18,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/burgers" />
+
             <TextView
                 android:id="@+id/burger_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/burger_title"
-                android:textSize="34sp" />
+                android:textSize="34sp"
+                android:gravity="center"
+                />
 
             <TextView
                 android:id="@+id/patty_label"
@@ -40,12 +48,81 @@
                 android:id="@+id/bread_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/bread_text" />
 
             <Spinner
                 android:id="@+id/bread_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/toppings_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/toppings_text" />
+
+            <LinearLayout
+                android:id="@+id/toppings_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="1dp"
+                >
+
+                <CheckBox
+                    android:id="@+id/lettuceBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/lettuce_text" />
+
+                <CheckBox
+                    android:id="@+id/tomatoBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="@string/tomato_text" />
+
+                <CheckBox
+                    android:id="@+id/onionBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="@string/onion_text" />
+
+                <CheckBox
+                    android:id="@+id/avocadoBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="@string/avocado_text" />
+
+                <CheckBox
+                    android:id="@+id/cheeseBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="@string/cheese_text" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price_placeholder"
+                android:gravity="center"
+                android:textSize="25sp"
+
+                />
+
+            <Button
+                android:id="@+id/add_to_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_order" />
+
+            <Button
+                android:id="@+id/make_combo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_combo" />
+
+
         </LinearLayout>
     </ScrollView>
 

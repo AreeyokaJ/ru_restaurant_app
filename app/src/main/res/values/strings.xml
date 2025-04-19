@@ -29,7 +29,18 @@
     <string name="quantity_text">Quantity:</string>
     <string name="price_placeholder">Price: $0.00</string>
     <string name="add_combo">Add Combo</string>
-
     <string name="burger_title">Customize Your Burger</string>
     <string name="choose_patty">Choose Patty: </string>
+    <string name="combo_text">Customize Your Combo</string>
+    <string name="drink_selection">Choose a Drink:</string>
+    <string name="lorem_ipsum"></string>
+    <string name="add_combo_to_order">Add Combo to Order</string>
+    <string name="lettuce_text">Lettuce</string>
+    <string name="tomato_text">Tomatoes</string>
+    <string name="onion_text">Onions</string>
+    <string name="avocado_text">Avocado</string>
+    <string name="cheese_text">Cheese</string>
+
+
+
 </resources>
