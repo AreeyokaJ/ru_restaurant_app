@@ -15,162 +15,144 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            android:title="Main Menu"
+            android:titleTextColor="@android:color/white"
+            app:titleCentered="true"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/main_menu" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="867dp"
-        android:contentDescription="@string/burgers_cd"
-        app:layout_anchor="@+id/constraintLayout2"
-        app:layout_anchorGravity="center">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="56dp">
 
-        <ImageButton
-            android:id="@+id/burgerButton"
-            android:layout_width="168dp"
-            android:layout_height="128dp"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="64dp"
-            app:layout_constraintBottom_toTopOf="@+id/beveragesButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.472"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/burgers" />
-
-        <ImageButton
-            android:id="@+id/beveragesButton"
-            android:layout_width="183dp"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
-            android:clickable="true"
-            android:contentDescription="@string/view_beverages"
-            android:focusable="true"
-            android:src="@drawable/beverages"
-            app:layout_constraintBottom_toTopOf="@+id/sandwichButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/sandwichButton"
-            android:layout_width="182dp"
-            android:layout_height="139dp"
-            android:layout_marginBottom="32dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/sidesButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.453"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/sandwiches" />
-
-        <ImageButton
-            android:id="@+id/sidesButton"
-            android:layout_width="138dp"
-            android:layout_height="117dp"
-            android:layout_marginBottom="32dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.45"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/fries" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
-            android:text="@string/burgers_cd"
-            android:textColor="#FAFAFA"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="@+id/burgerButton"
-            app:layout_constraintEnd_toEndOf="@+id/burgerButton"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="@+id/burgerButton" />
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/sandwiches_cd"
-            android:textColor="@color/black"
-            android:textColorLink="#673AB7"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/sandwichButton"
-            app:layout_constraintEnd_toEndOf="@+id/sandwichButton"
-            app:layout_constraintHorizontal_bias="0.862"
-            app:layout_constraintStart_toStartOf="@+id/sandwichButton"
-            app:layout_constraintTop_toTopOf="@+id/sandwichButton"
-            app:layout_constraintVertical_bias="0.072" />
+            <!-- Shopping Cart & Orders -->
+            <ImageButton
+                android:id="@+id/currentOrder"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/shopping_cart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="42dp"
-            android:text="@string/sides"
-            android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="@+id/sidesButton"
-            app:layout_constraintHorizontal_bias="0.48"
-            app:layout_constraintStart_toStartOf="@+id/sidesButton"
-            app:layout_constraintTop_toTopOf="@+id/sidesButton" />
+            <ImageButton
+                android:id="@+id/orders"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/orders"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        <ImageButton
-            android:id="@+id/currentOrder"
-            android:layout_width="116dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="116dp"
-            android:layout_marginEnd="4dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@+id/burgerButton"
-            app:layout_constraintHorizontal_bias="0.045"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/shopping_cart" />
+            <!-- Burger -->
+            <ImageButton
+                android:id="@+id/burgerButton"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/burgers"
+                app:layout_constraintTop_toBottomOf="@+id/currentOrder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/beverages_cd"
-            android:textColor="#E91E63"
-            android:textColorLink="#874F4F"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/beveragesButton"
-            app:layout_constraintEnd_toEndOf="@+id/beveragesButton"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="@+id/beveragesButton"
-            app:layout_constraintTop_toTopOf="@+id/beveragesButton"
-            app:layout_constraintVertical_bias="0.189" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Burgers"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/burgerButton"
+                app:layout_constraintStart_toStartOf="@+id/burgerButton"
+                app:layout_constraintEnd_toEndOf="@+id/burgerButton"/>
 
-        <ImageButton
-            android:id="@+id/orders"
-            android:scaleType="centerCrop"
-            android:layout_width="99dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="116dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.789"
-            app:layout_constraintStart_toEndOf="@+id/burgerButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/orders" />
+            <!-- Beverages -->
+            <ImageButton
+                android:id="@+id/beveragesButton"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/beverages"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beverages"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/beveragesButton"
+                app:layout_constraintStart_toStartOf="@+id/beveragesButton"
+                app:layout_constraintEnd_toEndOf="@+id/beveragesButton"/>
 
+            <!-- Sandwich -->
+            <ImageButton
+                android:id="@+id/sandwichButton"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@drawable/sandwiches"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sandwiches"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/sandwichButton"
+                app:layout_constraintStart_toStartOf="@+id/sandwichButton"
+                app:layout_constraintEnd_toEndOf="@+id/sandwichButton"/>
+
+            <!-- Sides -->
+            <ImageButton
+                android:id="@+id/sidesButton"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@drawable/fries"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sides"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/sidesButton"
+                app:layout_constraintStart_toStartOf="@+id/sidesButton"
+                app:layout_constraintEnd_toEndOf="@+id/sidesButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

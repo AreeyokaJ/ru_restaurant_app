@@ -42,7 +42,8 @@
             <Spinner
                 android:id="@+id/patty_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/patty_options"/>
 
             <TextView
                 android:id="@+id/bread_label"
@@ -53,7 +54,9 @@
             <Spinner
                 android:id="@+id/bread_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/bread_options"
+                />
 
             <TextView
                 android:id="@+id/toppings_text"
@@ -98,7 +101,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="29dp"
                     android:text="@string/cheese_text" />
+
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/quantityLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity_label" />
+
+            <Spinner
+                android:id="@+id/quantity_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/quantity_options"/>
 
             <TextView
                 android:id="@+id/priceText"
