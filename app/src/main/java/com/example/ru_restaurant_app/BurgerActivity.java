@@ -76,8 +76,6 @@ public class BurgerActivity extends AppCompatActivity {
         updatePriceOnQuantitySelection(burger, quantitySpinner, priceTextView);
         onAddToOrder(orderButton, burger);
         onAddToCombo(comboButton, burger);
-
-
     }
 
     /**
@@ -144,11 +142,12 @@ public class BurgerActivity extends AppCompatActivity {
     public void updatePriceOnToppingSelection(Burger burger, ArrayList<CheckBox> checkBoxes,
                                               TextView priceTextView) {
         for (CheckBox checkBox: checkBoxes) {
+            String checkBoxValue = checkBox.getText().toString();
             checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if (isChecked) {
-                    burger.getAddOns().add(AddOns.CHEESE);
+                    burger.getAddOns().add(AddOns.valueOf(checkBoxValue.toUpperCase()));
                 } else {
-                    burger.getAddOns().remove(AddOns.CHEESE);
+                    burger.getAddOns().remove(AddOns.valueOf(checkBoxValue.toUpperCase()));
                 }
 
                 updatePriceDisplay(burger, priceTextView);

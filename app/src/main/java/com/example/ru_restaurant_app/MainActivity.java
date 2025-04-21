@@ -66,6 +66,41 @@ public class MainActivity extends AppCompatActivity {
 
         // Add Burger Click Logic
         ImageButton burgerButton = findViewById(R.id.burgerButton);
+        onBurgerButtonClick(burgerButton);
+
+        // Add Cart Click Logic
+        ImageButton cartButton = findViewById(R.id.currentOrder);
+        onCartButtonClick(cartButton);
+
+        //Add order button click logic
+        ImageButton orderButton = findViewById(R.id.orders);
+        onOrderButtonClick(orderButton);
+
+    }
+
+
+    private void onOrderButtonClick(ImageButton orderButton){
+        orderButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+            startActivity(intent);
+        });
+    }
+    /**
+     * Takes user to cart screen
+     * @param cartButton
+     */
+    private void onCartButtonClick(ImageButton cartButton){
+        cartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    /**
+     * Takes user to burger selection screen
+     * @param burgerButton
+     */
+    private void onBurgerButtonClick(ImageButton burgerButton){
         burgerButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, BurgerActivity.class);
             startActivity(intent);
