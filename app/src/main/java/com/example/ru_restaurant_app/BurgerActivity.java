@@ -30,7 +30,7 @@ import java.util.Locale;
 
 /**
  * Activity for managing user activity on burger ordering screen
- *
+ * @author Areeyoka John
  */
 public class BurgerActivity extends AppCompatActivity {
 

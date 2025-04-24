@@ -17,6 +17,7 @@
     <string name="ru_burger">RU Burger</string>
     <string name="cart">Cart</string>
     <string name="orders">Orders</string>
+    <string name="export_orders">Export Orders</string>
     <string name="sandwiches_cd">Sandwiches</string>
     <string name="burgers_cd">Burgers</string>
     <string name="beverages_cd">Beverages</string>
@@ -33,7 +34,6 @@
     <string name="choose_patty">Choose Patty: </string>
     <string name="combo_text">Customize Your Combo</string>
     <string name="drink_selection">Choose a Drink:</string>
-    <string name="lorem_ipsum"></string>
     <string name="add_combo_to_order">Add Combo to Order</string>
     <string name="lettuce_text">Lettuce</string>
     <string name="tomato_text">Tomatoes</string>
@@ -68,8 +68,13 @@
         <item name="8">8</item>
         <item name="9">9</item>
         <item name="10">10</item>
-
     </string-array>
+
+    <string name="place_order">Place Order</string>
+    <string name="Cart">Cart</string>
+    <string name="subtotal_placeholder">Subtotal: $0.00</string>
+    <string name="tax">Tax: $0.00</string>
+    <string name="total">Total: $0.00</string>
 
 
 </resources>

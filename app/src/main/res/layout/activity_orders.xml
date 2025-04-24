@@ -20,7 +20,7 @@
             android:id="@+id/ordersTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Orders"
+            android:text="@string/orders"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -39,7 +39,7 @@
             android:id="@+id/exportOrdersButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Export Orders"
+            android:text="@string/export_orders"
             android:layout_marginTop="8dp"/>
 
     </LinearLayout>
