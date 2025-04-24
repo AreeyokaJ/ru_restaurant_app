@@ -54,6 +54,8 @@
         <item name="double">Double</item>
     </string-array>
     <string name="quantity_label">Quantity:</string>
+    <string name="toggle_theme">Toggle Theme</string>
+    <string name="dark_mode">Dark Mode</string>
 
     <string-array name="quantity_options">
         <item name="1">1</item>
