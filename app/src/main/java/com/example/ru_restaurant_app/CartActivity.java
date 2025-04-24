@@ -27,8 +27,6 @@ public class CartActivity extends AppCompatActivity {
     private TextView subtotalTextView, taxTextView, totalTextView;
     private Button placeOrderButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
