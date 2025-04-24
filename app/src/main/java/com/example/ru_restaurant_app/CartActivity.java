@@ -21,6 +21,10 @@ import com.example.model.Order;
 
 import java.util.List;
 
+/**
+ * Activity responsible for cart activity
+ * @author Areeyoka John
+ */
 public class CartActivity extends AppCompatActivity {
 
     private ListView cartListView;
@@ -28,7 +32,13 @@ public class CartActivity extends AppCompatActivity {
     private Button placeOrderButton;
 
 
-
+    /**
+     * Initializes activity
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +126,10 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Updates prices displayed to user
+     * @param cart
+     */
     private void updateTotals(Order cart) {
         subtotalTextView.setText(String.format("Subtotal: $%.2f", cart.getSubtotal()));
         taxTextView.setText(String.format("Tax: $%.2f", cart.getTax()));
